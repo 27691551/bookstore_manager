@@ -156,10 +156,10 @@ def print_sale_report(conn: sqlite3.Connection) -> None:
             print(f"會員姓名: {row['mname']}")
             print(f"書籍標題: {row['btitle']}")
             print("-" * 50)
-            print("單價\t數量\t折扣\t小計")
+            print(f"{"單價":<7}{"數量":<5}{"折扣":<6}{"小計":}")
             print("-" * 50)
             print(
-                f"{row['bprice']:,}\t{row['sqty']}\t{row['sdiscount']:,}\t{row['stotal']:,}"
+                f"{row['bprice']:<9,}{row['sqty']:<7}{row['sdiscount']:<8,}{row['stotal']:,}"
             )
             print("-" * 50)
             print(f"銷售總額: {row['stotal']:,}")
